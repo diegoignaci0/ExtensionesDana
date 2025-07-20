@@ -233,3 +233,16 @@
   new PureCounter();
 
 })()
+
+const track = document.querySelector('.carousel__track');
+const items = document.querySelectorAll('.carousel__item');
+let currentIndex = 0;
+const totalItems = items.length;
+
+function moveToNext() {
+  currentIndex = (currentIndex + 1) % totalItems;
+  track.style.transform = `translateX(-${100 * currentIndex}%)`;
+}
+
+setInterval(moveToNext, 3000); // cada 3 segundos
+
